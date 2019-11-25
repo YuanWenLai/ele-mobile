@@ -1,19 +1,11 @@
 // src/main.js
 import Vue from 'vue';
+import App from './app.vue'
+import router from './router'
 
-const say = function () {
-	return new Promise((resolve, reject) => {
-		resolve('I am es6');
-	})
-}
+const root = document.createElement('div')
+document.body.appendChild(root)
 
-
-var app = new Vue({
-	el: '#app',
-	data: {
-		msg: 'Hello Vue@2.0!'
-	},
-	methods: {
-		
-	},
-})
+new Vue({
+	render: (h) => h(App)
+}).$mount(root)

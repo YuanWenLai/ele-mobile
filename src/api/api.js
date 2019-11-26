@@ -2,18 +2,10 @@ import axios from 'axios'
 const base = 'http://cangdu.org:8001'
 
 //获取首页默认城市
-export const getDefaultCity = params => {
-	return axios.get(`${base}/v1/cities`, params)
+export const getDefaultCity = (type) => {
+	return axios.get(`${base}/v1/cities?type=${type}`)
 }
 
-export const getHotCity = params => {
-	return axios.get(`${base}/v1/cities`, params)
-}
-
-//获取所以选项城市
-export const getGroupCity = params => {
-	return axios.get(`${base}/v1/cities`, params)
-}
 
 //获取当前城市
 export const getCurrentCity = number => {
